@@ -1,7 +1,14 @@
-class Person:
-  def __init__(tanuloobj, name, height):
-    tanuloobj.name = name
-    tanuloobj.height = height
-
-  def myfunc(abc):
-    print("Hello my name is " + abc.name)
+import diak
+legmagasabb = 0
+legnagyobb_diak = ""
+file = open("magas.txt", "w")
+for i in range(3):
+        diak = input("Tanulo neve: ")
+        magassag = int(input("Magassaga(cm): "))  
+        diaks = [diak, magassag]
+        if magassag > legmagasabb:
+            legmagasabb = magassag
+            legnagyobb_diak = diak
+file.write(f'{legnagyobb_diak} a legmagasabb')
+file = open("magas.txt", "r")
+print(file.read())
